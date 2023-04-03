@@ -1,0 +1,38 @@
+.tag-box{
+	display: block;
+	width: 95%;
+	height: auto;
+	background: #fff;
+	box-sizing: border-box;
+	border: none;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+	margin: auto;
+	position: relative;
+}
+			
+.tag-box-head{
+	display: flex;
+	align-items: center;
+	width: auto;
+	height: 80px;
+	background:  #ddd;
+	color: #000;
+	font-family: 'Georgia', serif;
+	font-size: 35px;
+	padding: 10px;		
+}
+			
+#tag{
+	padding-right: 10px;
+}
+			
+.tags{
+	display: inline-block;
+	padding: 5px;
+	margin: 10px;
+	background: #ddd;
+	font-family: 'Verdana', sans-serif;
+	font-size: 14px;
+	color: #000;
+	text-align: center;
+}

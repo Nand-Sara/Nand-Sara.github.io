@@ -1,0 +1,421 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Poppins:wght@300;400;500;600&family=Roboto:wght@400;500&family=Sofia:wght@300;400;500;600&family=Trirong:wght@300;400;500;600&family=Ubuntu:wght@300;400;500;600&family=Alkatra:wght@100;200;300;400;500;600&display=swap');
+
+@keyframes fb-effect {
+	25% {border-top: 2px solid #4267b2;}
+	50% {border-right: 2px solid #4267b2;}
+	75% {border-bottom: 2px solid #4267b2;}
+	100% {border-left: 2px solid #4267b2;}
+}
+
+@keyframes g-effect {
+	25% {border-top: 2px solid #dd4b39;}
+	50% {border-right: 2px solid #dd4b39;}
+	75% {border-bottom: 2px solid #dd4b39;}
+	100% {border-left: 2px solid #dd4b39;}
+}
+
+@keyframes li-effect {
+	25% {border-top: 2px solid #00a0dc;}
+	50% {border-right: 2px solid #00a0dc;}
+	75% {border-bottom: 2px solid #00a0dc;}
+	100% {border-left: 2px solid #00a0dc;}
+}
+
+@keyframes gh-effect {
+	25% {border-top: 2px solid #333;}
+	50% {border-right: 2px solid #333;}
+	75% {border-bottom: 2px solid #333;}
+	100% {border-left: 2px solid #333;}
+}
+
+.login{
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	background: linear-gradient(to bottom right, #3cf 0%, #f9c 100%);
+	background-size: cover;
+	background-position:center;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.login-card{
+	width: 430px;
+	height: 400px;
+	outline: none;
+	border: none;
+	border-radius: 5px;
+	background: #fff;
+	position: relative;
+	padding: 30px;
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);
+}
+
+.login-card-front, .login-card-back{
+	position: relative;
+}
+
+.login-card-back{
+	display: none;
+}
+
+.signup-card{
+	width: 430px;
+	height: 500px;
+	outline: none;
+	border: none;
+	border-radius: 5px;
+	background: #fff;
+	position: relative;
+	padding: 30px;
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);
+}
+
+.login-title{
+	font-family: 'Trirong', serif;
+	font-weight: 500;
+	color: #000;
+}
+
+.emailid, .username, .pwd, .pswrd, .repswrd, .not-match, .match{
+	height: 20px;
+	width: 90%;
+	margin: 10px;
+	padding: 15px 10px;
+	font-family: 'Roboto', sans-serif;
+	font-size: 18px;
+	outline: none;
+	border: 1px solid #C0C0C0;
+	border-radius: 5px;
+	transition: 0.5s;
+}
+
+.emailid:focus, .username:focus, .pwd:focus, .repswrd:focus{
+	border: 1px solid #1DA1F2;
+}
+
+.pswrd:focus, .not-match:focus{
+	border: 1px solid #f00;
+}
+
+.pswrd:valid, .match:focus, .match:valid{
+	border: 1px solid #0f0;
+}
+
+.pwd::-ms-reveal, .pswrd::-ms-reveal, .repswrd::-ms-reveal, .not-match::-ms-reveal, .match::-ms-reveal{
+	display: none;
+}
+
+.usr-label{
+	position: absolute;
+	transform: translateY(120%);
+	left: 5%;
+}
+.pwd-label{
+	position: absolute;
+	transform: translateY(120%);
+	left: 5%;	
+}
+
+.usr-label, .pwd-label{
+	font-family: 'Roboto', sans-serif;
+	font-size: 18px;
+	width: auto;
+	color: #789;
+	pointer-events: none;
+}
+
+.show{
+	position: absolute;
+	transform: translateY(120%);
+	right: 5%;	
+	padding-right: 15px;
+	color: #111;
+	font-size: 20px;
+	cursor: pointer;
+	user-select: none;
+	visibility: hidden;
+}
+
+.pwd:valid ~ .show, .pswrd:valid ~ .show, .repswrd:valid ~ .show, .not-match:valid ~ .show, .match:valid ~ .show{
+	visibility: visible;
+}
+
+.emailid:focus ~ .usr-label, 
+.username:focus ~ .usr-label, 
+.pwd:focus ~ .pwd-label,
+.pswrd:focus ~ .pwd-label,
+.repswrd:focus ~ .pwd-label,
+.not-match:focus ~ .pwd-label,
+.match:focus ~ .pwd-label,
+.emailid:valid ~ .usr-label,
+.username:valid ~ .usr-label,
+.pwd:valid ~ .pwd-label,
+.pswrd:valid ~ .pwd-label,
+.repswrd:valid ~ .pwd-label,
+.not-match:valid ~ .pwd-label,
+.match:valid ~ .pwd-label{
+	transform: translateY(0);
+	left: 5%;
+	background: white;
+	font-size: 16px;
+	color: #1DA1F2;
+	transition: 0.3s ease;
+}
+
+.pswrd:focus ~ .pwd-label, .not-match:valid ~ .pwd-label{
+	color: #f00;
+}
+
+.pswrd:valid ~ .pwd-label, .match:valid ~ .pwd-label{
+	color: #0f0;
+}
+
+.login-btn{
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 24px;
+	font-weight: 500;
+	width: 100%;
+	height: 100%;
+	color: #fff;
+	border: none;
+	outline: none;
+	background: transparent;
+	cursor: pointer;
+	position: relative;
+	overflow: hidden;
+	z-index: 2;
+}
+
+.login-btn-box{
+	margin: 15px -4px;
+	padding: 15px;
+	height: 30px;
+	width: 95%;
+	background: linear-gradient(to right, #69f 0%, #f39 100%);
+	transition: all .4s;
+	border-radius: 5px;
+	z-index: -1;
+}
+
+.login-btn-box:hover{
+	transform: scale(1.05); 
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.3);
+}
+
+.login-btn-box:active{
+	transform: scale(0.9);
+	box-shadow: 0 3px 6px 0 rgba(0,0,0,0.3);
+}	
+
+.flip-btn, .reverse-btn{
+	margin-top: 30px;
+	width: 40px;
+	position: relative;
+	cursor: pointer;
+	font-family: 'Poppins', sans-serif;
+	font-weight: 500;
+	color: #333;
+	background: #fff;
+}
+
+.flip-btn{
+	left: 48%;
+}
+
+.reverse-btn{
+	left:45%;
+	bottom: 7%;
+}
+
+.flip-btn:hover, .reverse-btn:hover{
+	text-decoration: underline;
+	color: #39f;
+}
+
+.sso{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	text-align: center;
+	position: relative;
+}
+
+.facebook, .google, .linkedin, .github{
+	height: 40px;
+	width: 400px;
+	border: 1px solid silver;
+	border-radius: 3px;
+	margin: 15px;
+	transition: .4s;
+	cursor: pointer;
+}
+
+.facebook:hover{
+	animation: fb-effect 2s linear infinite;
+	transform: scale(1.05);
+	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.3);
+}
+
+.google:hover{
+	animation: g-effect 2s linear infinite;
+	transform: scale(1.05);
+	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.3);
+}
+
+.linkedin:hover{
+	animation: li-effect 2s linear infinite;
+	transform: scale(1.05);
+	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.3);
+}
+
+.github:hover{
+	animation: gh-effect 2s linear infinite;
+	transform: scale(1.05);
+	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.3);
+}
+
+.facebook:active, .google:active, .linkedin:active, .github:active{
+	animation: none;
+	border: none;
+	box-shadow: 0 1px 2px 0 rgba(0,0,0,0.3);
+	transform: scale(0.9);
+}
+
+.facebook:active{
+	background: #4267b2;
+}
+
+.google:active{
+	background: #dd4b39;
+}
+
+.linkedin:active{
+	background: #00a0dc;
+}
+
+.github:active{
+	background: #333;
+}
+
+.facebook:active i, .facebook:active span, .google:active i, .google:active span, .linkedin:active i, .linkedin:active span, .github:active i, .github:active span{
+	color: #fff;
+}
+
+.facebook i, .facebook span{
+	color: #4267b2;
+}
+
+.google i, .google span{
+	color: #dd4b39;
+}
+
+.linkedin i, .linkedin span{
+	color: #00a0dc;
+}
+
+.github i, .github span{
+	color: #333;
+}
+
+.facebook i, .google i, .linkedin i, .github i{
+	padding-top: 6px;
+	font-size: 25px;
+}
+
+.facebook span, .google span, .linkedin span, .github span{
+	position: relative;
+	font-size: 20px;
+	font-weight: 400;
+	padding-left: 8px;
+	font-family: 'Roboto', sans-serif;
+}
+
+.signup{
+	margin-top: 70px;
+	font-family: 'Roboto', sans-serif;
+}
+
+.signup a{
+	color: #ff0;
+	text-decoration: none;
+}
+
+.signup a:hover{
+	text-decoration: underline;
+	font-weight: 500;
+}
+
+.tooltip{
+	display: inline-block;
+	background: rgba(0,0,0,0.7);
+	font-family: 'Roboto', sans-serif;
+	color: #fff;
+	font-size: 15px;
+	border-radius: 7px;
+	padding: 20px 25px;
+	position: absolute;
+	text-align: left;
+	border: none;
+	visibility: hidden;
+	left: 20%;
+	top: 9%;
+	z-index: 3;
+}
+
+.tooltip::after{
+	content: "";
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	margin-left: -8px;
+	border-width: 8px;
+	border-style: solid;
+	border-color: rgba(0,0,0,0.7) transparent transparent transparent;
+}
+
+.tooltip-list{
+	list-style-type:  circle;
+	padding-left: 10px;
+}
+
+.tooltip-check{
+	list-style-type: disc;
+	color: #0f0;
+}
+
+@media screen and (max-width:600px){
+.usr-label{
+	transform: translateY(-30%);
+}
+	
+.pwd-label{
+	transform: translateY(-30%);
+}
+	
+.emailid:focus ~ .usr-label, 
+.username:focus ~ .usr-label, 
+.pwd:focus ~ .pwd-label,
+.pswrd:focus ~ .pwd-label,
+.repswrd:focus ~ .pwd-label,
+.not-match:focus ~ .pwd-label,
+.match:focus ~ .pwd-label,
+.emailid:valid ~ .usr-label,
+.username:valid ~ .usr-label,
+.pwd:valid ~ .pwd-label,
+.pswrd:valid ~ .pwd-label,
+.repswrd:valid ~ .pwd-label,
+.not-match:valid ~ .pwd-label,
+.match:valid ~ .pwd-label{
+	transform: translateY(-100%);
+}
+	
+.show{
+	transform: translateY(-30%);
+}
+}

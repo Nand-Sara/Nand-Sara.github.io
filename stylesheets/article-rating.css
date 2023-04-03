@@ -1,0 +1,213 @@
+.commentSection{
+	display: grid;
+	text-align: center;
+	place-items: center;
+	align-content: center;
+	align-items: center;
+	font-family: "Poppins", sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+.comment-box{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	width: 600px;
+	padding: 20px 30px;
+	border: 1px solid #333;
+	border-radius: 5px;
+	background: #eee;
+}	
+
+.comment-display{
+	display: flex;
+	flex-direction: column;
+	justify-content: left;
+	align-items: flex-start;
+	text-align: left;
+	position: relative;
+	width: 600px;
+	padding: 20px 30px;
+	border: 1px solid rgba(0,0,0,0.25);
+	visibility: hidden;
+	transition: all 0.2s ease;
+	background: #fff;
+}	
+
+.edit-btn{
+	height: 35px;	
+	width: 30%;
+	padding: 5px;
+}
+
+.edit-btn button{
+	height: 100%;
+	width: 100%;
+	border: 1px solid #444;
+	outline: none;
+	background: #222;
+	color: #fff;
+	font-size: 14px;
+	font-weight: 500;
+	text-transform: uppercase;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+.edit-btn button:hover{
+	transform: scale(1.05);
+}
+
+.edit-btn button:active{
+	color: #222;
+	background: #fff;
+	transform: scale(0.95);
+}
+
+.comment-box .edit-comment{
+	position: absolute;
+	right: 10px;
+	top: 5px;
+	font-size: 16px;
+	color: #666;
+	font-weight: 500;
+	cursor: pointer;
+}
+
+.comment-box .edit-comment:hover{
+	text-decoration: underline;
+}
+
+.comment-box .emoji-scale  input{
+	display: none;
+}
+
+.emoji-scale label{
+	font-size: 35px;
+	padding: 10px;
+	transition: all 0.2s ease;
+	cursor: pointer;
+	opacity: 0.3;
+}
+
+input:not(:checked) ~ label:hover,
+input:not(:checked) ~ label.hover ~ label{
+	cursor: pointer;
+	font-size: 45px;;
+	opacity: 1;
+}	
+
+#emoji-1:checked ~ label.emoji-1,
+#emoji-2:checked ~ label.emoji-2,
+#emoji-3:checked ~ label.emoji-3,
+#emoji-4:checked ~ label.emoji-4,
+#emoji-5:checked ~ label.emoji-5,
+#emoji-6:checked ~ label.emoji-6,
+#emoji-7:checked ~ label.emoji-7,
+#emoji-8:checked ~ label.emoji-8{
+	cursor: pointer;
+	opacity: 1;
+	font-size: 40px;
+}
+
+.comment-box form{
+	display: none;
+}
+
+input:checked ~ form{
+	display: block;
+}
+
+form .message{
+	width: 100%;
+	font-size: 20px;
+	font-weight: 500;
+	color: #444;
+	margin: 10px 0 20px 0;
+	text-align: center;
+	transition: all 0.2s ease;
+}
+
+#emoji-1:checked ~ form .message:before{
+	content: "This makes me angry because...";
+}
+
+#emoji-2:checked ~ form .message:before{
+	content: "This makes me sad because...";
+}
+
+#emoji-3:checked ~ form .message:before{
+	content: "I am shocked because...";
+}
+
+#emoji-4:checked ~ form .message:before{
+	content: "This upsets me because...";
+}
+
+#emoji-5:checked ~ form .message:before{
+	content: "I feel indifferent because...";
+}
+
+#emoji-6:checked ~ form .message:before{
+	content: "This makes me feel starstruck because...";
+}
+
+#emoji-7:checked ~ form .message:before{
+	content: "This makes me ecstatic because...";
+}
+
+#emoji-8:checked ~ form .message:before{
+	content: "This makes me want to celebrate because...";
+}
+
+form .comment-section{
+	height: 150px;
+	width: 100%;
+	overflow: hidden;
+}
+
+form .comment-section textarea{
+	font-family: "Courier-New", monospace;
+	font-size: 16px;
+	outline: none;
+	border: none;
+	font-weight: 400;
+	height: 95%;
+	width: 95%;
+	padding: 10px;
+	resize: none;
+}
+
+form .post-btn{
+	height: 45px;
+	transform: translateX(30%);
+	width: 60%;
+	padding: 5px;
+}
+
+form .post-btn button{
+	height: 100%;
+	width: 100%;
+	border: 1px solid #444;
+	outline: none;
+	background: #222;
+	color: #fff;
+	font-size: 17px;
+	font-weight: 600;
+	text-transform: uppercase;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+form .post-btn button:hover{
+	transform: scale(1.05);
+}
+
+form .post-btn button:active{
+	color: #222;
+	background: #fff;
+	transform: scale(0.95);
+}

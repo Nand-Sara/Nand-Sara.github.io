@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Poppins:wght@300;400;500;600&family=Roboto:wght@400;500&family=Sofia:wght@300;400;500;600&family=Trirong:wght@300;400;500;600&family=Ubuntu:wght@300;400;500;600&family=Alkatra:wght@100;200;300;400;500;600&display=swap');
+
+@import "stylesheets/about.css";
+@import "stylesheets/article-rating.css";
+@import "stylesheets/contact.css";
+@import "stylesheets/navbar.css";
+@import "stylesheets/popular-posts.css";
+@import "stylesheets/subscription.css";
+@import "stylesheets/tags.css";
+
+.window{
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+	grid-template-rows: minmax(100px,auto);
+	grid-template-areas:
+	"hd hd hd hd hd hd hd"
+	"nb nb nb nb nb nb nb"
+	"sb main main main main main sb"
+	"post post post post post post post"
+	"sec sec sec sec sec sec sec"
+	"abt abt abt abt abt abt abt"
+	"con con con con con con con"
+	"cred cred cred cred cred cred cred"
+	"tg tg tg tg tg tg tg"
+	"ft ft ft ft ft ft ft";
+	margin: 0;
+	padding: 0;
+}
+
+.box{
+	padding: 5px;
+}
+
+.subtitle{
+	display: block;
+	padding: 15px;
+	height: auto;
+	width: auto;
+	border-radius: 3px;
+	font-family: 'Georgia', serif;
+	background: rgba(0,0,0,0.6);
+	color: #fff;
+	margin: 10px;
+	text-align: left;
+}
+
+header{
+	grid-area: hd;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	height: 200px;
+	padding: 30px;
+	background: linear-gradient(to right, #3cf 0%, #f9c 100%);
+	font-family: 'Sofia', sans-serif;
+	font-weight: 600;
+	font-size: 2em;
+	color: #fff;
+	text-shadow: 2px 4px rgba(0,0,0,0.4);
+	position: relative;
+	margin: auto;
+}
+
+.login-button{
+	position: absolute;
+	right: 5%;
+	color: #fff;
+	text-decoration: none;
+}
+
+nav{
+	grid-area: nb;
+}
+
+.sidebar{
+	grid-area: sb;
+}
+
+article{
+	grid-area: main;
+	font-family: 'Verdana', sans-serif;
+	font-size: 14px;
+	line-height: 25px;
+	padding: 15px;
+	z-index: 1;
+}
+
+.content-image{
+	margin: auto;
+	height: 500px;
+	width: 700px;
+}
+			
+#content-image-caption{
+	text-align: center;
+}
+
+blockquote, q{
+	display: block;
+	font-family: 'Alkatra', cursive;
+	font-size: 18px;
+	line-height: 30px;
+	border-top: 4px double;
+	border-bottom: 2px dotted;
+	padding: 25px;
+	width: 600px;
+	text-align: center;
+	margin: auto;
+	background: rgba(0,0,0,0.1);
+}
+
+.help{
+	border-bottom: 1px dotted;
+	cursor: help;
+}
+
+.posts{
+	grid-area: post;
+}
+
+section{
+	grid-area: sec;
+}
+
+.about{
+	grid-area: abt;
+	display: flex;
+	align-items: center;
+	justify-content: center;	
+}
+
+.contact{
+	grid-area: con;
+}
+
+.credits{
+	grid-area: cred;
+	background: #666;
+	font-family: 'Verdana', sans-serif;
+	font-size: 16px;
+	color: #fff;
+	padding: 20px;
+}
+
+.credits-list{
+	list-style-type: none;
+	padding-left: 10px;
+	text-decoration: none;
+}
+
+.tags-section{
+	grid-area: tg;
+}
+
+footer{
+	grid-area: ft;
+	height: 150px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	background: linear-gradient(to right, #3cf 0%, #f9c 100%);
+	text-align: center;
+	font-family: 'Verdana', sans-serif;
+	font-size: 20px;
+	color: #fff;
+	text-shadow: 2px 2px rgba(0,0,0,0.5);
+	padding: 10px;
+}
+
+#footer-icon{
+	padding: 10px;
+	cursor: pointer;
+}
