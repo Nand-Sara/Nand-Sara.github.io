@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang = "en">
+	<head>
+		<meta charset = "utf-8">
+		<meta name = "viewport" content = "width=device-width, initial-scale=1">
+		<link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"/>
+		<link rel = "stylesheet" href ="https://nand-sara.github.io/stylesheets/login-form-2.css">
+	</head>
+	<body class = "login">
+	<div class = "signup-card">
+		<div class = "login-card-front">
+			<h1 class = "login-title">SIGNUP FORM</h1>
+			<form>
+				<div>
+					<input type = "email" class = "emailid" required>
+					<label class = "usr-label">Email</label>
+				</div>
+				<div>
+					<input type = "text" class = "username" maxlength = "50" required>
+					<label class = "usr-label">Username</label>
+				</div>
+				<div>
+					<input type = "password" class = "pswrd" pattern = "(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{12,}" required>
+					<span class = "show"><i id = "eye1" class = "fa-solid fa-eye"></i></span>
+					<label class = "pwd-label">Password</label>
+					<div class = "tooltip">Password must contain:<br>
+						<ul class = "tooltip-list">
+							<li id = "upper">Atleast one UPPERCASE letter</li>
+							<li id = "lower">Atleast one lowercase letter</li>
+							<li id = "number">Atleast one number</li>
+							<li id = "character">Atleast one special character</li>
+							<li id = "lengthof">Must have atleast 12 characters</li>
+						</ul>
+					</div>
+				</div>
+				<div>
+					<input type = "password" class = "repswrd" required>
+					<span class = "show"><i id = "eye2" class = "fa-solid fa-eye"></i></span>
+					<label class = "pwd-label">Re-enter Password</label>
+				</div>
+				<div class = "login-btn-box">
+					<div class = "login-btn">
+						<button class = "login-btn">SIGNUP</button>
+					</div>
+				</div>
+			</form>
+			<div class = "flip-btn" onclick = "flipfunc()">Or</div>
+		</div>
+		<div class = "login-card-back">
+			<div class = "sso">
+				<h2 class = "login-title" style = "margin: 40px">Signup with</h2>
+				<div class = "facebook">
+					<a href = "https://www.facebook.com/" rel = "noreferrer noopener nofollow" target = "_blank">
+						<i class = "fa-brands fa-square-facebook"><span>Facebook</span></i>
+					</a>
+				</div>
+				<div class = "google">
+					<a href = "https://accounts.google.com/v3/signin/identifier?dsh=S-1677384403%3A1679136692048562&ifkv=AWnogHfWm0ILH6bLrcBM03zhJYaxvINuoL9CCufiZSPY61JuwV-SAI7GeiC5TnhCq3InrC5V_ov3&service=mail&flowName=GlifWebSignIn&flowEntry=ServiceLogin" rel = "noreferrer noopener nofollow" target = "_blank">
+						<i class = "fa-brands fa-square-google-plus"><span>Google</span></i>
+					</a>
+				</div>
+				<div class = "linkedin">
+					<a href = "https://www.linkedin.com/login" rel = "noreferrer noopener nofollow" target = "_blank">
+						<i class = "fa-brands fa-linkedin"><span>LinkedIn</span></i>
+					</a>
+				</div>
+				<div class = "github">
+					<a href = "https://github.com/login" rel = "noreferrer noopener nofollow" target = "_blank">
+						<i class = "fa-brands fa-square-github"><span>GitHub</span></i>
+					</a>
+				</div>
+				<div class = "reverse-btn" onclick = "reversefunc()"><i class = "fa-regular fa-circle-left"></i>Back</div>
+			</div>
+		</div>
+	<div class = "signup" style = "margin-top: 30px">Already a member? <a href="https://nand-sara.github.io/statics/login-form-2.html" rel = "noopener">Login here</a>
+    </div>
+	</div>
+	<script>
+		var element1 = document.querySelector(".login-card-front");
+		var element2 = document.querySelector(".login-card-back");
+		function flipfunc(){
+			element1.style.display = "none";
+			element2.style.display = "flex";
+			document.querySelector(".signup").style.margin = "55px";
+		}
+		function reversefunc(){
+			element1.style.display = "";
+			element2.style.display = "none";
+			document.querySelector(".signup").style.margin = "30px";
+		}
+	</script>
+	<script>
+        var input1 = document.querySelector(".pswrd");
+        var show1 = document.querySelector("#eye1");
+		var input2 = document.querySelector(".repswrd");
+		var show2 = document.querySelector("#eye2");
+        show1.addEventListener("click", active1);
+		show2.addEventListener("click", active2);
+		function active1(){
+			if(input1.type === "password"){
+				input1.type = "text";
+				show1.style.color = "#1DA1F2";
+				show1.className = "fa-solid fa-eye-slash";
+			}
+			else{
+				input1.type = "password";
+				show1.className = "fa-solid fa-eye";
+				show1.style.color = "#111";
+			}
+		}
+		function active2(){
+			if(input2.type === "password"){
+				input2.type = "text";
+				show2.style.color = "#1DA1F2";
+				show2.className = "fa-solid fa-eye-slash";
+			}
+			else{
+				input2.type = "password";
+				show2.className = "fa-solid fa-eye";
+				show2.style.color = "#111";			
+			}
+		}
+    </script>
+	<script>
+		var repswd = document.querySelector(".repswrd");
+		var pswd = document.querySelector(".pswrd");
+		repswd.addEventListener("blur", validation);
+		function validation(){
+			if(repswd.value !== "" && pswd.value !== ""){
+				if(repswd.value === pswd.value){
+					repswd.className = "match";
+
+				}
+				else{
+					alert("Passwords do not match!");
+					repswd.className = "not-match";
+				}
+			}
+		}
+		var usrname = document.querySelector(".username");
+		var emailID = document.querySelector(".emailid");
+		document.querySelector(".login-btn").addEventListener("click", confirmation);
+		function confirmation(){
+			if(usrname.value !== "" && emailID.value !== "" && repswd.value !== "" && pswd.value !== "" && repswd.value === pswd.value){
+				if(confirm("By signing in, you are agreeing to our Terms & Conditions and Privacy Policy")== true){
+					if(confirm("Do you want us to remember your login credentials?\nUsername: "+usrname.value+ "\nPassword: "+"********"+pswd.value.slice(8)) == true){
+						navigator.clipboard.writeText(usrname.value);
+						navigator.clipboard.writeText(pswd.value);
+					}
+				}
+			}
+		}
+		var tooltip = document.querySelector(".tooltip");
+		pswd.onfocus = function(){
+			tooltip.style.visibility = "visible";
+		}
+		pswd.onblur = function(){
+			tooltip.style.visibility = "hidden";
+		}
+		var uppercase = document.getElementById("upper");
+		var lowercase = document.getElementById("lower");
+		var numeral = document.getElementById("number");
+		var splchar = document.getElementById("character");
+		var len = document.getElementById("lengthof");
+		pswd.onkeyup = function(){
+			var UpperCaseLetters = /[A-Z]/g;
+			if(pswd.value.match(UpperCaseLetters)){
+				uppercase.classList.add("tooltip-check");
+			}
+			else{
+				uppercase.classList.remove("tooltip-check");	
+			}
+			var LowerCaseLetters = /[a-z]/g;
+			if(pswd.value.match(LowerCaseLetters)){
+				lowercase.classList.add("tooltip-check");
+			}
+			else{
+				lowercase.classList.remove("tooltip-check");	
+			}
+			var Numerics = /[0-9]/g;
+			if(pswd.value.match(Numerics)){
+				numeral.classList.add("tooltip-check");
+			}
+			else{
+				numeral.classList.remove("tooltip-check");	
+			}
+			var SpecialCharacters = /[!@#$%^&*]/g;
+			if(pswd.value.match(SpecialCharacters)){
+				splchar.classList.add("tooltip-check");
+			}
+			else{
+				splchar.classList.remove("tooltip-check");	
+			}
+			if(pswd.value.length >= 12){
+				len.classList.add("tooltip-check");
+			}
+			else{
+				len.classList.remove("tooltip-check");	
+			}
+		}
+	</script>
+	</body>
+</html>
