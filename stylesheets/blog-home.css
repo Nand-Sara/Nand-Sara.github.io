@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Poppins:wght@300;400;500;600&family=Roboto:wght@400;500&family=Sofia:wght@300;400;500;600&family=Trirong:wght@300;400;500;600&family=Ubuntu:wght@300;400;500;600&family=Alkatra:wght@100;200;300;400;500;600&display=swap');
 
-@import "stylesheets/about.css";
-@import "stylesheets/article-rating.css";
-@import "stylesheets/contact.css";
-@import "stylesheets/navbar.css";
-@import "stylesheets/popular-posts.css";
-@import "stylesheets/subscription.css";
-@import "stylesheets/tags.css";
+@import "about.css";
+@import "article-rating.css";
+@import "contact.css";
+@import "navbar.css";
+@import "popular-posts.css";
+@import "subscription.css";
+@import "tags.css";
 
 .window{
 	display: grid;
