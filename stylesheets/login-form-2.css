@@ -390,6 +390,14 @@
 }
 
 @media screen and (max-width:495px){
+	.login-card, .signup-card{
+		width: 400px;
+	}
+	
+	.facebook, .google, .linkedin, .github{
+		width: 350px;
+	}
+	
 	.usr-label{
 		transform: translateY(-225%);
 	}
