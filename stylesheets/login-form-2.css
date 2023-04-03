@@ -389,33 +389,33 @@
 	color: #0f0;
 }
 
-@media screen and (max-width:600px){
-.usr-label{
-	transform: translateY(-30%);
-}
+@media screen and (max-width:495px){
+	.usr-label{
+		transform: translateY(-225%);
+	}
 	
-.pwd-label{
-	transform: translateY(-30%);
-}
+	.pwd-label{
+		transform: translateY(-225%);
+	}
 	
-.emailid:focus ~ .usr-label, 
-.username:focus ~ .usr-label, 
-.pwd:focus ~ .pwd-label,
-.pswrd:focus ~ .pwd-label,
-.repswrd:focus ~ .pwd-label,
-.not-match:focus ~ .pwd-label,
-.match:focus ~ .pwd-label,
-.emailid:valid ~ .usr-label,
-.username:valid ~ .usr-label,
-.pwd:valid ~ .pwd-label,
-.pswrd:valid ~ .pwd-label,
-.repswrd:valid ~ .pwd-label,
-.not-match:valid ~ .pwd-label,
-.match:valid ~ .pwd-label{
-	transform: translateY(-100%);
-}
+	.emailid:focus ~ .usr-label, 
+	.username:focus ~ .usr-label, 
+	.pwd:focus ~ .pwd-label,
+	.pswrd:focus ~ .pwd-label,
+	.repswrd:focus ~ .pwd-label,
+	.not-match:focus ~ .pwd-label,
+	.match:focus ~ .pwd-label,
+	.emailid:valid ~ .usr-label,
+	.username:valid ~ .usr-label,
+	.pwd:valid ~ .pwd-label,
+	.pswrd:valid ~ .pwd-label,
+	.repswrd:valid ~ .pwd-label,
+	.not-match:valid ~ .pwd-label,
+	.match:valid ~ .pwd-label{
+		transform: translateY(-375%);
+	}
 	
-.show{
-	transform: translateY(-30%);
-}
-}
+	.show{
+		transform: translateY(-250%);
+	}
+}		
